@@ -8,6 +8,15 @@ void setup() {
 }
 
 void loop() {
+
+  // Wait some seconds for the device to fully recognize this device as a keyboard
+  for(int x = 0; x <= 15; x++) {
+    digitalWrite(1, HIGH);
+    DigiKeyboard.delay(100);
+    digitalWrite(1, LOW);
+    DigiKeyboard.delay(900);
+  }
+  
   // Light the LED to indicate we're writing
   digitalWrite(1, HIGH);
   
@@ -27,8 +36,8 @@ void loop() {
   // Do nothing forever
   while(true) {
     digitalWrite(1, HIGH);
-    delay(100);
+    delay(50);
     digitalWrite(1, LOW);
-    delay(100);
+    delay(50);
   }
 }
